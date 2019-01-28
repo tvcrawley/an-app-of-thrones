@@ -17,19 +17,25 @@ class Main extends Component {
           "The North": []
         },
         {
-          "The Vale of Arryn": []
+          "The Vale": []
         },
         {
           "The Reach": []
         },
         {
+          "The Westerlands": []
+        },
+        {
           "The Riverlands": []
         },
         {
-          "Beyond the Wall": []
+          "The Crownlands": []
         },
         {
           "The Stormlands": []
+        },
+        {
+          "The Neck": []
         },
         {
           "Iron Islands": []
