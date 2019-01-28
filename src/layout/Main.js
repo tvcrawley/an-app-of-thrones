@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import './Main.css'
-// import Region from '../regions/Region'
+import Region from '../regions/Region'
 
 class Main extends Component {
   constructor () {
@@ -51,7 +51,7 @@ class Main extends Component {
         {regions}
         <Route
         path='/regions/:regionName'
-          // component={region.component}
+          component={Region}
         />
       </div>
     )
