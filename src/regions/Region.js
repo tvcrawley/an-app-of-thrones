@@ -5,11 +5,15 @@ import React, { Component } from 'react'
 class Region extends Component {
   render() {
     console.log(this.props)
-    // accessing the name of the region based on the url param
-    const regionName = this.props.match.params.regionName
+    const houses = this.props.houses.map((house) => {
+      console.log(house)
+      return <li key={house.name}>{house.name}</li>
+    })
+
     return (
       <div className="Region">
-      Welcome to {regionName}
+      Welcome to {this.props.region}
+      {houses}
       </div>
     )
   }
