@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 // import './Regions.css'
 
+// component: container for regions so view can switch from
+// `Regions` component to `Region` component
 class Regions extends Component {
   constructor () {
     super()
@@ -20,17 +22,21 @@ class Regions extends Component {
         }
       }
 
+  // GET data for each region based on the state key name
   componentDidMount () {
+    // regex: look for content after `housesOf`
     const stateRegex = /(?<=housesOf).*/
 
+    // loop through the keys of state
     Object.keys(this.state).forEach(key => {
-      if (stateRegex.test(key)) {
-        const regionName = key.match(stateRegex)[0]
-          fetch(`https://anapioficeandfire.com/api/houses?region=${regionName}`)
-          .then(res => res.ok ? res : new Error())
-          .then(res => res.json())
-          .then(res => this.setState({ [`housesOf${regionName}`]: res }))
-      }
+      // retrieves the result of matching a string against a regex
+      const regionName = key.match(stateRegex)[0]
+      // GET region data and save to state
+      fetch(`https://anapioficeandfire.com/api/houses?region=${regionName}`)
+        .then(res => res.ok ? res : new Error())
+        .then(res => res.json())
+        .then(res => this.setState({ [`housesOf${regionName}`]: res }))
+        .catch(console.error)
     })
   }
   render() {
