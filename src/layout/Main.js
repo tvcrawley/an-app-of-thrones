@@ -48,7 +48,7 @@ class Main extends Component {
         <Route exact path='/' render={
           () => <Regions regions={this.state} />
         } />
-        <Route exact path='/regions/:regionName' render={
+        <Route path='/regions/:regionName' render={
           ({match}) => {
             const stateRegex = /(?<=housesOf).*/
 
