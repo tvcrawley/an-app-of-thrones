@@ -6,6 +6,24 @@ import House from '../houses/House'
 
 // component: container for region to display specific info pertaining to it
 class Region extends Component {
+  constructor () {
+    super ()
+
+    this.state = {
+      overlord: null
+    }
+  }
+
+  componentDidMount () {
+    if (this.props.houses[0].overlord) {
+      fetch(this.props.houses[0].overlord)
+        .then(res => res.ok ? res : new Error())
+        .then(res => res.json())
+        .then(res => this.setState({ overlord: res.name }))
+        .catch(console.error)
+    }
+  }
+
   render() {
     const houses = this.props.houses.map((house) => {
       return <li key={house.name}>
@@ -16,11 +34,12 @@ class Region extends Component {
     return (
       <div className="Region">
         Welcome to {this.props.region}
+        {this.state.overlord ?
+          <p>Reigning Overlord: {this.state.overlord}</p> : null}
         {houses}
         <Route path={`${this.props.match.url}/:houseName`} render={
           ({match}) => {
             const regionHouse = this.props.houses.filter(house => {
-
               return (match.params.houseName === house.name)
             })
             return  <House house={regionHouse[0]} />
