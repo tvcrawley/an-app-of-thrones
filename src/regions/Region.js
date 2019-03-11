@@ -14,6 +14,7 @@ class Region extends Component {
     }
   }
 
+  // GET overlord data and save to state
   componentDidMount () {
     if (this.props.houses[0].overlord) {
       fetch(this.props.houses[0].overlord)

@@ -13,7 +13,7 @@ class House extends Component {
     }
   }
 
-  // initial rendering of component
+  // GET swornMembers and currentLord data and save to state
   componentDidMount() {
     this.props.house.swornMembers.forEach(member => {
       fetch(member)
@@ -36,13 +36,14 @@ class House extends Component {
       }
    }
 
-   // component render with check for previous prop change
+   // render component and check if the previous prop has changed
    componentDidUpdate(prevProps) {
      if(prevProps === undefined) {
        return false
      }
 
-     // load swornMembers data if there is a different houseName in params
+     // reload swornMembers and currentLord data if there is a different
+     // houseName in params
      if (prevProps.match.params.houseName !== this.props.match.params.houseName) {
        this.setState({swornMembers: []})
        this.setState({currentLord: null})
