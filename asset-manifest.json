@@ -1,13 +1,13 @@
 {
-  "main.css": "/an-app-of-thrones/static/css/main.a5735b55.chunk.css",
-  "main.js": "/an-app-of-thrones/static/js/main.5d1003a6.chunk.js",
-  "main.js.map": "/an-app-of-thrones/static/js/main.5d1003a6.chunk.js.map",
-  "static/js/1.3f2929db.chunk.js": "/an-app-of-thrones/static/js/1.3f2929db.chunk.js",
-  "static/js/1.3f2929db.chunk.js.map": "/an-app-of-thrones/static/js/1.3f2929db.chunk.js.map",
+  "main.css": "/an-app-of-thrones/static/css/main.4bb1f5bd.chunk.css",
+  "main.js": "/an-app-of-thrones/static/js/main.60953297.chunk.js",
+  "main.js.map": "/an-app-of-thrones/static/js/main.60953297.chunk.js.map",
+  "static/js/1.ad02da4b.chunk.js": "/an-app-of-thrones/static/js/1.ad02da4b.chunk.js",
+  "static/js/1.ad02da4b.chunk.js.map": "/an-app-of-thrones/static/js/1.ad02da4b.chunk.js.map",
   "runtime~main.js": "/an-app-of-thrones/static/js/runtime~main.0802ace5.js",
   "runtime~main.js.map": "/an-app-of-thrones/static/js/runtime~main.0802ace5.js.map",
-  "static/css/main.a5735b55.chunk.css.map": "/an-app-of-thrones/static/css/main.a5735b55.chunk.css.map",
+  "static/css/main.4bb1f5bd.chunk.css.map": "/an-app-of-thrones/static/css/main.4bb1f5bd.chunk.css.map",
   "index.html": "/an-app-of-thrones/index.html",
-  "precache-manifest.9ab37b1211e16c036637e985d8e039b2.js": "/an-app-of-thrones/precache-manifest.9ab37b1211e16c036637e985d8e039b2.js",
+  "precache-manifest.56259cce70df7e59208b5c70e38ec986.js": "/an-app-of-thrones/precache-manifest.56259cce70df7e59208b5c70e38ec986.js",
   "service-worker.js": "/an-app-of-thrones/service-worker.js"
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/an-app-of-thrones/precache-manifest.9ab37b1211e16c036637e985d8e039b2.js"
+  "/an-app-of-thrones/precache-manifest.56259cce70df7e59208b5c70e38ec986.js"
 );
 
 workbox.clientsClaim();
