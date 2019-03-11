@@ -13,27 +13,32 @@ class House extends Component {
     }
   }
 
-  // GET swornMembers and currentLord data and save to state
-  componentDidMount() {
-    this.props.house.swornMembers.forEach(member => {
-      fetch(member)
+  getSwornMembers (member) {
+    fetch(member)
+    .then(res => res.ok ? res : new Error())
+    .then(res => res.json())
+    .then(res => {
+      const swornMembers = [...this.state.swornMembers]
+      swornMembers.push(res)
+      return this.setState({swornMembers})
+    })
+    .catch(console.error)
+  }
+
+  getCurrentLord () {
+    if (this.props.house.currentLord) {
+      fetch(this.props.house.currentLord)
         .then(res => res.ok ? res : new Error())
         .then(res => res.json())
-        .then(res => {
-          const swornMembers = [...this.state.swornMembers]
-          swornMembers.push(res)
-          return this.setState({swornMembers})
-        })
+        .then(res => this.setState({ currentLord: res.name }))
         .catch(console.error)
-      })
+    }
+  }
 
-      if (this.props.house.currentLord) {
-        fetch(this.props.house.currentLord)
-          .then(res => res.ok ? res : new Error())
-          .then(res => res.json())
-          .then(res => this.setState({ currentLord: res.name }))
-          .catch(console.error)
-      }
+  // GET swornMembers and currentLord data and save to state
+  componentDidMount() {
+    this.props.house.swornMembers.forEach(member => this.getSwornMembers(member))
+    this.getCurrentLord()
    }
 
    // render component and check if the previous prop has changed
@@ -48,35 +53,20 @@ class House extends Component {
        this.setState({swornMembers: []})
        this.setState({currentLord: null})
 
-       this.props.house.swornMembers.forEach(member => {
-         fetch(member)
-          .then(res => res.ok ? res : new Error())
-          .then(res => res.json())
-          .then(res => {
-            const swornMembers = [...this.state.swornMembers]
-            swornMembers.push(res)
-            return this.setState({swornMembers})
-          })
-          .catch(console.error)
-        })
-
-        if (this.props.house.currentLord) {
-          fetch(this.props.house.currentLord)
-            .then(res => res.ok ? res : new Error())
-            .then(res => res.json())
-            .then(res => this.setState({ currentLord: res.name }))
-            .catch(console.error)
-        }
+       this.props.house.swornMembers.forEach(member => this.getSwornMembers(member))
+       this.getCurrentLord()
       }
    }
 
   render() {
+    const { name, words, coatOfArms, ancestralWeapons } = this.props.house
+    const { swornMembers, currentLord } = this.state
 
-    const ancestralWeapons = this.props.house.ancestralWeapons.map(weapon => (
+    const ancestralWeaponsJSX = ancestralWeapons.map(weapon => (
       <li key={weapon}>{weapon}</li>
     ))
 
-    const swornMembers = this.state.swornMembers.map(member => {
+    const swornMembersJSX = swornMembers.map(member => {
       // find numbers at the end of the member's url
       // ex: https://anapioficeandfire.com/api/characters/497
       const memberNumber = member.url.replace(/\D/g, '')
@@ -85,17 +75,14 @@ class House extends Component {
 
     return (
       <div className="House">
-        <h3>{this.props.house.name}</h3>
-        {this.props.house.words ?
-          <p>Words: {this.props.house.words}</p> : null}
-        {this.props.house.coatOfArms ?
-          <p>Coat of Arms: {this.props.house.coatOfArms}</p> : null}
-        {this.props.house.ancestralWeapons[0] ?
-          <ul>Ancestral Weapons: {ancestralWeapons}</ul> : null}
-        {this.state.currentLord ?
-          <p>Current Lord: {this.state.currentLord}</p> : <p>No current lord</p>}
-        {this.state.swornMembers[0] ?
-          <p>Sworn Members: {swornMembers}</p> : null}
+        <h3>{name}</h3>
+
+        {words ? <p>Words: {words}</p> : null}
+        {coatOfArms ? <p>Coat of Arms: {coatOfArms}</p> : null}
+        {ancestralWeapons[0] ? <ul>Ancestral Weapons: {ancestralWeaponsJSX}</ul> : null}
+        {currentLord ? <p>Current Lord: {currentLord}</p> : <p>No current lord</p>}
+        {swornMembers[0] ? <p>Sworn Members: {swornMembersJSX}</p> : null}
+        
       </div>
     )
   }
