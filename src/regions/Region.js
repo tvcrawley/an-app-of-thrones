@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router'
 // import './Region.css'
 import House from '../houses/House'
@@ -16,7 +16,7 @@ class Region extends Component {
 
   // GET overlord data and save to state
   componentDidMount () {
-    if (this.props.houses[0].overlord) {
+    if (this.props.houses && this.props.houses[0].overlord) {
       fetch(this.props.houses[0].overlord)
         .then(res => res.ok ? res : new Error())
         .then(res => res.json())
@@ -26,6 +26,10 @@ class Region extends Component {
   }
 
   render() {
+    if (!this.props.houses) {
+      return <Redirect to='/' />
+    }
+
     const houses = this.props.houses.map((house) => {
       return <li key={house.name}>
                <Link to={`${this.props.match.url}/${house.name}`}> {house.name}</Link>
