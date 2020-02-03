@@ -4,9 +4,9 @@ import './Footer.css'
 class Footer extends Component {
   render() {
     return (
-      <div className="Footer">
-        Footer
-      </div>
+      <footer>
+        <a href="http://tvlangley.github.io/">A Tonia Langley Production</a>
+      </footer>
     )
   }
 }

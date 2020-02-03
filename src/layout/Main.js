@@ -39,9 +39,7 @@ class Main extends Component {
   }
   render() {
     return (
-      <div className="Main">
-        Main
-
+      <main>
         <Route exact path='/' render={
           () => <Regions regions={this.state} />
         } />
@@ -59,7 +57,7 @@ class Main extends Component {
                     />
           }
         } />
-      </div>
+      </main>
     )
   }
 }
