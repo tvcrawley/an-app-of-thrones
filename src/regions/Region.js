@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Route, Link, Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 // import './Region.css'
 import House from '../houses/House'
 
@@ -31,17 +34,27 @@ class Region extends Component {
     }
 
     const houses = this.props.houses.map((house) => {
-      return <li key={house.name}>
+      return <Col md={4} as={'span'} key={house.name}>
                <Link to={`${this.props.match.url}/${house.name}`}> {house.name}</Link>
-             </li>
+             </Col>
     })
+
+    const rowOne = houses.slice(0, 3)
+    const rowTwo = houses.slice(3, 6)
+    const rowThree = houses.slice(6)
 
     return (
       <div className="Region">
         Welcome to {this.props.region}
         {this.state.overlord ?
           <p>Reigning Overlord: {this.state.overlord}</p> : null}
-        {houses}
+
+        <Container>
+          <Row>{rowOne}</Row>
+          <Row>{rowTwo}</Row>
+          <Row>{rowThree}</Row>
+        </Container>
+
         <Route path={`${this.props.match.url}/:houseName`} render={
           ({match}) => {
             const regionHouse = this.props.houses.filter(house => {
