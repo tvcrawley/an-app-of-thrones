@@ -1,0 +1,27 @@
+.Region h2,
+.Region h3 {
+    text-align: center;
+    color: #C38D28;
+}
+.Region .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Region .row {
+    margin: 3rem 0;
+}
+
+.Region span {
+    border-radius: .2em;
+    margin: 0 2rem;
+    padding: 2rem;
+    background-color: #C38D28;
+}
+
+.Region span a {
+    color: #000;
+    text-decoration: none;
+}

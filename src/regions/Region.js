@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-// import './Region.css'
+import './Region.css'
 import House from '../houses/House'
 
 // component: container for region to display specific info pertaining to it
@@ -38,21 +38,22 @@ class Region extends Component {
                <Link to={`${this.props.match.url}/${house.name}`}> {house.name}</Link>
              </Col>
     })
-
     const rowOne = houses.slice(0, 3)
     const rowTwo = houses.slice(3, 6)
-    const rowThree = houses.slice(6)
+    const rowThree = houses.slice(6, 9)
+    const rowFour = houses.slice(9)
 
     return (
       <div className="Region">
-        Welcome to {this.props.region}
+        <h2>Welcome to {this.props.region}</h2>
         {this.state.overlord ?
-          <p>Reigning Overlord: {this.state.overlord}</p> : null}
+          <h3>Reigning Overlord: {this.state.overlord}</h3> : null}
 
         <Container>
           <Row>{rowOne}</Row>
           <Row>{rowTwo}</Row>
           <Row>{rowThree}</Row>
+          <Row>{rowFour}</Row>
         </Container>
 
         <Route path={`${this.props.match.url}/:houseName`} render={
