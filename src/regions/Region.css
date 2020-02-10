@@ -10,6 +10,9 @@
     align-items: center;
 }
 
+.Region .container {
+    margin: 1.5rem 0;
+}
 .Region .row {
     margin: 3rem 0;
 }

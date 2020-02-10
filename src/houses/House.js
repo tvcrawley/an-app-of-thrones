@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import './House.css'
+import './House.css'
 import { withRouter } from 'react-router'
 
 // component: container for region to display specific info pertaining to it
@@ -77,11 +77,11 @@ class House extends Component {
       <div className="House">
         <h3>{name}</h3>
 
-        {words ? <p>Words: {words}</p> : null}
-        {coatOfArms ? <p>Coat of Arms: {coatOfArms}</p> : null}
-        {ancestralWeapons[0] ? <ul>Ancestral Weapons: {ancestralWeaponsJSX}</ul> : null}
-        {currentLord ? <p>Current Lord: {currentLord}</p> : <p>No current lord</p>}
-        {swornMembers[0] ? <p>Sworn Members: {swornMembersJSX}</p> : null}
+        {words ? <h4>Words: {words}</h4> : null}
+        {coatOfArms ? <h4>Coat of Arms: {coatOfArms}</h4> : null}
+        {ancestralWeapons[0] ? <ul><h4>Ancestral Weapons: </h4>{ancestralWeaponsJSX}</ul> : null}
+        {currentLord ? <h4>Current Lord: {currentLord}</h4> : <h4>No current lord</h4>}
+        {swornMembers[0] ? <ul><h4>Sworn Members: </h4>{swornMembersJSX}</ul> : null}
         
       </div>
     )

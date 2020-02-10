@@ -1,8 +1,12 @@
 footer {
+    /*
+    ~~~~ sticky footer below ~~~~
     bottom: 0;
     position: absolute;
     width: 100%;
+    */
     background-color: #C38D28;
+    border-top: #171714 solid 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
