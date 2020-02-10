@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Link to='/'>An App of Thrones</Link>
+        <Link to='/'><h1>An App of Thrones</h1></Link>
       </header>
     )
   }
