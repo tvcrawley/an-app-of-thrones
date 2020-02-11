@@ -1,0 +1,12 @@
+header {
+    background-color: #C38D28;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #000;
+}
