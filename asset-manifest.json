@@ -1,13 +1,22 @@
 {
-  "main.css": "/an-app-of-thrones/static/css/main.4bb1f5bd.chunk.css",
-  "main.js": "/an-app-of-thrones/static/js/main.60953297.chunk.js",
-  "main.js.map": "/an-app-of-thrones/static/js/main.60953297.chunk.js.map",
-  "static/js/1.ad02da4b.chunk.js": "/an-app-of-thrones/static/js/1.ad02da4b.chunk.js",
-  "static/js/1.ad02da4b.chunk.js.map": "/an-app-of-thrones/static/js/1.ad02da4b.chunk.js.map",
-  "runtime~main.js": "/an-app-of-thrones/static/js/runtime~main.0802ace5.js",
-  "runtime~main.js.map": "/an-app-of-thrones/static/js/runtime~main.0802ace5.js.map",
-  "static/css/main.4bb1f5bd.chunk.css.map": "/an-app-of-thrones/static/css/main.4bb1f5bd.chunk.css.map",
-  "index.html": "/an-app-of-thrones/index.html",
-  "precache-manifest.56259cce70df7e59208b5c70e38ec986.js": "/an-app-of-thrones/precache-manifest.56259cce70df7e59208b5c70e38ec986.js",
-  "service-worker.js": "/an-app-of-thrones/service-worker.js"
+  "files": {
+    "main.css": "/an-app-of-thrones/static/css/main.40e3a3b5.chunk.css",
+    "main.js": "/an-app-of-thrones/static/js/main.16b9d7ab.chunk.js",
+    "main.js.map": "/an-app-of-thrones/static/js/main.16b9d7ab.chunk.js.map",
+    "runtime-main.js": "/an-app-of-thrones/static/js/runtime-main.bebf0b4c.js",
+    "runtime-main.js.map": "/an-app-of-thrones/static/js/runtime-main.bebf0b4c.js.map",
+    "static/js/2.bde3c24b.chunk.js": "/an-app-of-thrones/static/js/2.bde3c24b.chunk.js",
+    "static/js/2.bde3c24b.chunk.js.map": "/an-app-of-thrones/static/js/2.bde3c24b.chunk.js.map",
+    "index.html": "/an-app-of-thrones/index.html",
+    "precache-manifest.aa9b3365dbe1c433d550d8d9b670b174.js": "/an-app-of-thrones/precache-manifest.aa9b3365dbe1c433d550d8d9b670b174.js",
+    "service-worker.js": "/an-app-of-thrones/service-worker.js",
+    "static/css/main.40e3a3b5.chunk.css.map": "/an-app-of-thrones/static/css/main.40e3a3b5.chunk.css.map",
+    "static/js/2.bde3c24b.chunk.js.LICENSE.txt": "/an-app-of-thrones/static/js/2.bde3c24b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bebf0b4c.js",
+    "static/js/2.bde3c24b.chunk.js",
+    "static/css/main.40e3a3b5.chunk.css",
+    "static/js/main.16b9d7ab.chunk.js"
+  ]
 }
